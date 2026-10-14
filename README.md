@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# Banking Application — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript frontend for the Banking Application portfolio project. Built with Vite, React Router, and Axios, and intended to work with the Java Spring Boot backend.
 
-Currently, two official plugins are available:
+**Portfolio status: Project 1 core milestone complete.** Remaining API integration and production-readiness tasks are documented as follow-up work; not every screen or service is claimed to be fully integrated with the current backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technology stack
 
-## React Compiler
+- React and TypeScript
+- Vite
+- React Router
+- Axios for backend API calls
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Current frontend structure
 
-## Expanding the ESLint configuration
+- Login page and protected routes
+- Customer dashboard
+- Admin dashboard structure
+- API client and service modules for accounts, transactions, beneficiaries, authentication, and deposit requests
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Backend repository
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+https://github.com/Bakang9911/banking_app
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Follow-up integration work
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Align the login request/response with the backend authentication implementation
+- Verify every service endpoint against a working backend endpoint
+- End-to-end test account, transaction, beneficiary, and deposit-request flows
+- Add UI validation, error/loading states, and automated tests
+- Configure environment-specific API URLs rather than relying on a localhost URL for deployment
 
+## Future feature: Investment tools
+
+Investment functionality is planned for a future version and is not currently implemented. A possible enhancement is an educational investment section with simple return calculations and charts.
+
+## Run locally
+
+Install Node.js, then run:
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Use the backend repository instructions to configure and start the API. This is an educational portfolio project, not a production banking service.
